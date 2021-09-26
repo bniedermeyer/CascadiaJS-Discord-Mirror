@@ -18,14 +18,13 @@ export class DiscordMirror {
   unsubscribe: Unsubscribe;
 
   componentWillLoad() {
-    this.fbService = new FirebaseService(this.url, this.token);
+    this.fbService = new FirebaseService(this.url, this.token, Boolean(this.token));
     this.database = this.fbService.getDatabase()
     const dbRef = ref(this.database, 'messages');
     this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(200));
     this.unsubscribe = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
         const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible );
-        console.log('updated messages', updatedMessages);
         this.messages = updatedMessages;
       }
     });

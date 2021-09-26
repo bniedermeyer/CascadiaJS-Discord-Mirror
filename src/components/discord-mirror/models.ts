@@ -4,3 +4,4 @@ export interface Message {
   username: string;
   visible: boolean;
 }
+

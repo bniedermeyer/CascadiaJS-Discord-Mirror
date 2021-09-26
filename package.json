@@ -1,6 +1,6 @@
 {
-  "name": "discord-mirror",
-  "version": "0.0.1",
+  "name": "@bniedermeyer/discord-mirror",
+  "version": "0.0.7-alpha",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",

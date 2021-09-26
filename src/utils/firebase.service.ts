@@ -7,11 +7,16 @@ export class FirebaseService {
   private config: FirebaseOptions;
   private app: FirebaseApp;
 
-  constructor(databaseURL: string, apiKey: string) {
-    this.config = { databaseURL, apiKey};
+  constructor(databaseURL: string, apiKey: string, enableAuth: boolean = true) {
+    this.config = { databaseURL };
+    if (enableAuth && apiKey) {
+      this.config = {...this.config, apiKey}
+    }
     this.app = initializeApp(this.config);
-    const auth = getAuth(this.app);
-    signInAnonymously(auth).then(() => console.log('authenticated'))
+    if (enableAuth) {
+      const auth = getAuth(this.app);
+      signInAnonymously(auth).then(() => console.log('🚀'))
+    }
   }
 
   public getDatabase() {
