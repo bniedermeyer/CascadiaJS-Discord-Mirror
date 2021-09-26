@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  border: 4px solid green;
+  font-family: canada-type-gibson, sans-serif;
+  font-size: 1.125em;
+  font-weight: 200;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style: none;
+}
+
+.username {
+  font-weight: 600;
+}
