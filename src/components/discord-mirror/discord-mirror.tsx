@@ -1,7 +1,8 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 import { FirebaseService } from '../../utils/firebase.service';
 import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild } from 'firebase/database';
-import {Message} from './models'
+import { Message } from './models'
+import { parseCode } from '../../utils/utils';
 
 @Component({
   tag: 'discord-mirror',
@@ -24,7 +25,17 @@ export class DiscordMirror {
     this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(200));
     this.unsubscribe = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
-        const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible );
+        const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible)
+          .map(message => {
+            return {
+              ...message,
+              text: `
+              <div class="message">
+                <div class="username">${message.username}: </div> ${parseCode(`${message.text}`)}
+              </div>
+            `
+            }
+          });
         this.messages = updatedMessages;
       }
     });
@@ -38,8 +49,8 @@ export class DiscordMirror {
     return (
       <Host>
         <ul>
-          {this.messages.map(message => (<li key={message.created}>
-            <span class="username">{message.username}: </span>{message.text}</li>))}
+          {this.messages.map(message => (<li key={message.created} innerHTML={message.text}>
+            </li>))}
         </ul>
       </Host>
     );

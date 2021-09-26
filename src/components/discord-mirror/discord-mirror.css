@@ -1,3 +1,6 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css');
+
+
 :host {
   display: block;
   border: 4px solid green;
@@ -7,10 +10,31 @@
   overflow-y: scroll;
 }
 
+h1,h2,h3,h4,li {
+  font-size: 1.125em !important;
+  font-weight: 200 !important;
+  font-family: canada-type-gibson, sans-serif !important;
+}
+
 ul {
   list-style: none;
 }
 
 .username {
   font-weight: 600;
+  margin-right: 15px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 5px;
+}
+
+code:not(.hljs) {
+  background-color: lightgrey;
+  padding: 2px;
 }
