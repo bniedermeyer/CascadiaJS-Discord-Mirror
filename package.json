@@ -1,7 +1,7 @@
 {
   "name": "@cascadiajs/discord-mirror",
   "version": "0.0.7-alpha",
-  "description": "Stencil Component Starter",
+  "description": "A web component for displaying current activity within a Discord Channel",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -10,6 +10,14 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/discord-mirror/discord-mirror.esm.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror.git"
+  },
+  "homepage": "https://2021.cascadiajs.com/",
   "files": [
     "dist/",
     "loader/"
@@ -48,6 +56,13 @@
   "author": "Brenden Niedermeyer <contact@brenden.dev> (https://brenden.dev)",
   "contributors": [],
   "license": "MIT",
+  "keywords": [
+    "web component",
+    "cascadiajs",
+    "stencil",
+    "discord",
+    "firebase"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
