@@ -1,5 +1,5 @@
 {
-  "name": "@bniedermeyer/discord-mirror",
+  "name": "@cascadiajs/discord-mirror",
   "version": "0.0.7-alpha",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -34,5 +34,7 @@
     "jest-cli": "^26.6.3",
     "puppeteer": "^10.0.0"
   },
+  "author": "Brenden Niedermeyer <contact@brenden.dev> (https://brenden.dev)",
+  "contributors": [],
   "license": "MIT"
 }
