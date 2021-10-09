@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.1.0...v1.1.1) (2021-10-09)
+
+
+### Bug Fixes
+
+* refactor scroll logic ([a55315e](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/a55315e4d04d8f8fe8e3c4670d5f2744fce2b705))
+
 # [1.1.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.0.0...v1.1.0) (2021-10-09)
 
 
