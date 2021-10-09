@@ -1,16 +1,17 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css');
 
-
 :host {
-  display: block;
-  border: 4px solid green;
   font-family: canada-type-gibson, sans-serif;
   font-size: 1.125em;
   font-weight: 200;
-  overflow-y: scroll;
+  margin: 0;
 }
 
-h1,h2,h3,h4,li {
+h1,
+h2,
+h3,
+h4,
+li {
   font-size: 1.125em !important;
   font-weight: 200 !important;
   font-family: canada-type-gibson, sans-serif !important;
@@ -18,6 +19,10 @@ h1,h2,h3,h4,li {
 
 ul {
   list-style: none;
+  overflow-y: scroll;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .username {
@@ -37,4 +42,15 @@ p {
 code:not(.hljs) {
   background-color: lightgreen;
   padding: 2px;
+}
+
+#end {
+  height: 10px;
+  overflow: auto;
+  /* margin-top: 15px; */
+}
+
+::slotted(ul) {
+  max-height: 100% !important;
+  max-width: 100% !important;
 }
