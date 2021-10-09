@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.0.0...v1.1.0) (2021-10-09)
+
+
+### Bug Fixes
+
+* remove unnecessary console logs ([d983405](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/d98340526fc0ae1042633eb517bcb57b2d4547b5))
+
+
+### Features
+
+* add auto scrolling and remove container styling ([baf22ff](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/baf22ff7c06d3fa72963aba99f367dcebe9ff21a))
+
 # 1.0.0 (2021-10-02)
 
 
