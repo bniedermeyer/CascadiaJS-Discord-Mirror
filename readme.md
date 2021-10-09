@@ -107,7 +107,7 @@ After you have setup the script tag, add the component to your template, JSX, ht
 <discord-mirror id="discord" url="<your url>" token="<your token>"></discord-mirror>
 ```
 
-> View an demo setup [here](https://codesandbox.io/s/cjs-discord-demo-q66yo?file=/index.html).
+> View an demo setup [here](https://codesandbox.io/s/stoic-euclid-tw1pu?file=/src/index.js:92-220).
 
 # Contributing
 

@@ -73,6 +73,12 @@ export class DiscordMirror {
     this.initScrollObserver();
   }
 
+  componentDidRender() {
+    if (this.scrollToLatest) {
+      this.endOfChat.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    }
+  }
+
   disconnectedCallback() {
     // Remove all listeners
     this.unsubscribeFromDb();
@@ -89,11 +95,6 @@ export class DiscordMirror {
       this.scrollToLatest = entries.some(entry => entry.isIntersecting);
     }, options);
     this.observer.observe(this.endOfChat);
-  }
-
-  @Watch('messages')
-  watchMessages() {
-    this.endOfChat.scrollIntoView();
   }
 
   @Watch('scrollToLatest')
