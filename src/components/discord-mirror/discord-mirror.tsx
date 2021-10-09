@@ -87,8 +87,6 @@ export class DiscordMirror {
     // this observer watches to see when the use scrolls away from the chat and disables chat updates during that time
     this.observer = new IntersectionObserver(entries => {
       this.scrollToLatest = entries.some(entry => entry.isIntersecting);
-      console.log('entries', entries);
-      console.log('from observer', this.scrollToLatest);
     }, options);
     this.observer.observe(this.endOfChat);
   }
