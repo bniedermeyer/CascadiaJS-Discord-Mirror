@@ -9,7 +9,7 @@
 
 # CascadiaJS Discord Mirror
 
-A web component for displaying current activity within a Discord Channel.
+A web component for displaying current activity within a channel in a chat application like Discord or Slack.
 
 ## About
 
@@ -18,6 +18,12 @@ This component reads chat messages that are stored within a Firebase Realtime Da
 > This repository only handles the display of messages that are already loaded to a Realtime Database. For an example of how to load messages from Discord into Firebase, see our Abbot based [Discord Bot](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror-Bot).
 
 # Getting Started
+
+## Installing
+
+```bash
+npm install @cascadiajs/discord-mirror
+```
 
 ## Firebase
 
