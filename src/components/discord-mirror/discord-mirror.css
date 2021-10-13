@@ -53,3 +53,8 @@ code:not(.hljs) {
   max-height: 100% !important;
   max-width: 100% !important;
 }
+
+.message-text > p > img {
+  width: 300px;
+  height: auto;
+}

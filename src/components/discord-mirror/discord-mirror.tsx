@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 import { FirebaseService } from '../../utils/firebase.service';
 import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild } from 'firebase/database';
-import { parseCode } from '../../utils/utils';
-import { Message } from './models';
+import { Message } from '../models';
+import { MessageContent } from '../message-content/message-content';
 
 @Component({
   tag: 'discord-mirror',
@@ -44,18 +44,17 @@ export class DiscordMirror {
     this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(200));
     this.unsubscribeFromDb = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
-        const updatedMessages = (Object.values(snapshot.val()) as Message[])
-          .filter(message => message.visible)
-          .map(message => {
-            return {
-              ...message,
-              text: `
-              <div class="message">
-                <div class="username">${message.username}: </div> ${parseCode(`${message.text}`)}
-              </div>
-            `,
-            };
-          });
+        const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible);
+        // .map(message => {
+        //   return {
+        //     ...message,
+        //     text: `
+        //     <div class="message">
+        //       <div class="username">${message.username}: </div> ${parseCode(`${message.text}`)}
+        //     </div>
+        //   `,
+        //   };
+        // });
 
         // only scroll to the latest is the user is not scrolling
         if (this.scrollToLatest) {
@@ -111,7 +110,11 @@ export class DiscordMirror {
       <Host>
         <ul ref={el => (this.startOfChat = el as HTMLElement)}>
           {this.messages.map(message => (
-            <li key={message.created} innerHTML={message.text}></li>
+            <li key={message.created}>
+              <div class="message">
+                <div class="username">{message.username}: </div> <MessageContent message={message} />
+              </div>
+            </li>
           ))}
           <li id="end" aria-hidden="true" ref={el => (this.endOfChat = el as HTMLElement)}></li>
         </ul>

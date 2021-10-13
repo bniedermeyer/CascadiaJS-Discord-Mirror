@@ -40,6 +40,15 @@ export interface Message {
   /* Whether the message should be displayed in the component. 
   Useful for remove inappropriate content while preserving data about it being sent  */
   visible: boolean;
+  /* Optional - if included in the message the component will display the gif instead of the message text */
+  gif?: {
+    /* The url of a preview image. Used to display for users who enable reduced motion on their machines */
+    preview: string;
+    /* The url of the animated gif */
+    gifUrl: string;
+    /* The title of the gif, this will be used as alt text */
+    title: string;
+  };
 }
 ```
 
@@ -118,6 +127,16 @@ After you have setup the script tag, add the component to your template, JSX, ht
 # Contributing
 
 The CascadiaJS [code of conduct](https://2021.cascadiajs.com/code-of-conduct) applies to all particpants contributing to this repository.
+
+We use [semantic-release](https://semantic-release.gitbook.io/semantic-release/) to deploy our updates. Below are example of commit messages and the release types they will create.
+
+| Commit message                                                                                                                                                                                   | Release type               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| `fix(pencil): stop graphite breaking when too much pressure applied`                                                                                                                             | ~~Patch~~ Fix Release      |
+| `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release  |
+| `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release |
+
+For convienience, this repo is setup with [commitizen](https://commitizen.github.io/cz-cli/) to help format your commit messages. To use it, run `npx cz` or `git cz` if you have it installed locally already.
 
 ## Stencil
 
