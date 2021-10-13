@@ -45,16 +45,6 @@ export class DiscordMirror {
     this.unsubscribeFromDb = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
         const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible);
-        // .map(message => {
-        //   return {
-        //     ...message,
-        //     text: `
-        //     <div class="message">
-        //       <div class="username">${message.username}: </div> ${parseCode(`${message.text}`)}
-        //     </div>
-        //   `,
-        //   };
-        // });
 
         // only scroll to the latest is the user is not scrolling
         if (this.scrollToLatest) {
