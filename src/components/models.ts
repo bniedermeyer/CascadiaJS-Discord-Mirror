@@ -7,4 +7,13 @@ export interface Message {
   username: string;
   /* Whether the message should be displayed in the component. Useful for remove inappropriate content while preserving data about it being sent */
   visible: boolean;
+  /* Optional - if included in the message the component will display the gif instead of the message text */
+  gif?: {
+    /* The url of a preview image. Used to display for users who enable reduced motion on their machines */
+    preview: string;
+    /* The url of the animated gif */
+    gifUrl: string;
+    /* The title of the gif, this will be used as alt text */
+    title: string;
+  };
 }
