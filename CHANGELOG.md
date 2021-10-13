@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.1.1...v1.2.0) (2021-10-13)
+
+
+### Features
+
+* add support for gifs ([4f10049](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/4f10049f1d4a65bf1f965b2d5b1e9ffc8b06764d)), closes [#3](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/issues/3)
+
 ## [1.1.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.1.0...v1.1.1) (2021-10-09)
 
 
