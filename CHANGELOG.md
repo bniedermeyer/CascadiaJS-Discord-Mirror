@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.2.0...v1.3.0) (2021-10-17)
+
+
+### Bug Fixes
+
+* open all links in a new tab ([46141df](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/46141df6428d6bb53cfb5fb8c03f48759bbd0aab))
+
+
+### Features
+
+* add support for non-tenor hosted gifs ([71aaabd](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/71aaabd7a00ed382f8ee2ad88243b2d64e0b2068))
+
 # [1.2.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.1.1...v1.2.0) (2021-10-13)
 
 
