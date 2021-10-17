@@ -41,12 +41,12 @@ export class DiscordMirror {
     const dbRef = ref(this.database, 'messages');
     // build the query that we want to run against the database and subscribe to updates
     // TODO: look into using virtual scrolling so we don't have to limit messages
-    this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(200));
+    this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(300));
     this.unsubscribeFromDb = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
         const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible);
 
-        // only scroll to the latest is the user is not scrolling
+        // only scroll to the latest if the user is not scrolling
         if (this.scrollToLatest) {
           this.messages = updatedMessages;
         } else {

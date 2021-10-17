@@ -46,8 +46,8 @@ export interface Message {
     preview: string;
     /* The url of the animated gif */
     gifUrl: string;
-    /* The title of the gif, this will be used as alt text */
-    title: string;
+    /* The alt text of the gif */
+    alt: string;
   };
 }
 ```

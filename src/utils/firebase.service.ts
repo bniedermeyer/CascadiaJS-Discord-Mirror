@@ -11,7 +11,7 @@ export class FirebaseService {
     if (enableAuth && apiKey) {
       this.config = { ...this.config, apiKey };
     }
-    this.app = initializeApp(this.config);
+    this.app = initializeApp(this.config, 'discord-mirror-component');
     if (enableAuth) {
       // This allows us to put read protection on the database without requiring individual users to authenticate.
       const auth = getAuth(this.app);
