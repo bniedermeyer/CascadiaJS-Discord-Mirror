@@ -1,23 +1,8 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css');
-
 :host {
-  font-family: canada-type-gibson, sans-serif;
-  font-size: 1.125em;
-  font-weight: 200;
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-li {
-  font-size: 1.125em !important;
-  font-weight: 200 !important;
-  font-family: canada-type-gibson, sans-serif !important;
-}
-
-ul {
+ul.message-container {
   list-style: none;
   overflow-y: scroll;
   height: 100%;
@@ -26,7 +11,6 @@ ul {
 }
 
 .username {
-  font-weight: 600;
   margin-right: 15px;
 }
 
@@ -39,11 +23,6 @@ p {
   margin: 5px;
 }
 
-code:not(.hljs) {
-  background-color: lightgreen;
-  padding: 2px;
-}
-
 #end {
   height: 1px;
   overflow: auto;
@@ -54,7 +33,39 @@ code:not(.hljs) {
   max-width: 100% !important;
 }
 
-.message-text > p > img {
+/*
+
+Styling applied when `use-styles` = true
+
+*/
+
+.with-styles {
+  font-family: canada-type-gibson, sans-serif;
+  font-size: 1.125em;
+  font-weight: 200;
+}
+
+.with-styles .message-text h1,
+.with-styles .message-text h2,
+.with-styles .message-text h3,
+.with-styles .message-text h4,
+.with-styles .message-text li,
+.with-styles .message-text li p {
+  font-size: 1.125em !important;
+  font-weight: 200 !important;
+  font-family: canada-type-gibson, sans-serif !important;
+}
+
+.with-styles .message-text > p > img {
   width: 300px;
   height: auto;
+}
+
+.with-styles .username {
+  font-weight: 600;
+}
+
+.with-styles code:not(.hljs) {
+  background-color: lightgreen;
+  padding: 2px;
 }

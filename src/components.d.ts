@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface DiscordMirror {
     /**
+     * The HighlightJS theme to apply to markdown. Must have `useStyles` enabled
+     */
+    highlightTheme: string;
+    /**
      * If read protection is enabled in your database, the Firebase project's Web API Key
      */
     token: string;
@@ -15,6 +19,10 @@ export namespace Components {
      * The URL of the Firebase Realtime Database to pull data from
      */
     url: string;
+    /**
+     * If false, will not apply any text styling. See https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom for help styling from consuming applications
+     */
+    useStyles: boolean;
   }
 }
 declare global {
@@ -30,6 +38,10 @@ declare global {
 declare namespace LocalJSX {
   interface DiscordMirror {
     /**
+     * The HighlightJS theme to apply to markdown. Must have `useStyles` enabled
+     */
+    highlightTheme?: string;
+    /**
      * If read protection is enabled in your database, the Firebase project's Web API Key
      */
     token?: string;
@@ -37,6 +49,10 @@ declare namespace LocalJSX {
      * The URL of the Firebase Realtime Database to pull data from
      */
     url?: string;
+    /**
+     * If false, will not apply any text styling. See https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom for help styling from consuming applications
+     */
+    useStyles?: boolean;
   }
   interface IntrinsicElements {
     'discord-mirror': DiscordMirror;
