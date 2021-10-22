@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.3.0...v1.4.0) (2021-10-22)
+
+
+### Features
+
+* **styling:** add logic to override or disable styles ([fb7486c](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/fb7486c8c2fabe6ad2821f6a7b3d913c5d7d6d65))
+
 # [1.3.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.2.0...v1.3.0) (2021-10-17)
 
 

@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                                                                                                       | Type      | Default           |
@@ -11,12 +12,14 @@
 | `url`            | `url`             | The URL of the Firebase Realtime Database to pull data from                                                                                                       | `string`  | `undefined`       |
 | `useStyles`      | `use-styles`      | If false, will not apply any text styling. See https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom for help styling from consuming applications | `boolean` | `true`            |
 
+
 ## Shadow Parts
 
 | Part         | Description |
 | ------------ | ----------- |
 | `"username"` |             |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
