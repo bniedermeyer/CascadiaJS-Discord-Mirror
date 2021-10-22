@@ -124,11 +124,60 @@ After you have setup the script tag, add the component to your template, JSX, ht
 
 > View an demo setup [here](https://codesandbox.io/s/stoic-euclid-tw1pu?file=/src/index.js:92-220).
 
+# Styles
+
+## Disabling styles
+
+The component comes packaged with a set of default styles, but you have the option to disable all aesthetic styles. Simply add a `use-styles="false"` attribute to the component.
+
+```html
+<discord-mirror url="<your db url>" use-styles="false"></discord-mirror>
+```
+
+If you disable styles you will have to style the messages yourself. Messages use the following classes:
+
+- `.message`: this is the container for each message
+- `.username`: this is the username element
+- `.message-text`: this contains the content of the message and can be variable based on whether the message is just text or markdown.
+
+## Shadow DOM
+
+Additionally, this component uses the Shadow DOM to help encapsulate styling of the component. If you are unfamiliar with styling with the Shadow DOM here are a few helpful links
+
+- [Stencil Documentation](https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom)
+- https://developers.google.com/web/fundamentals/web-components/shadowdom#stylefromoutside
+
+We also expose [css shadow parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/) for `username`, `message-text`, and `image`.
+
+```css
+/* in your consuming app's css */
+discord-mirror::part(username) {
+  font-weight: lighter;
+}
+discord-mirror::part(message-text) {
+  font-weight: bold;
+}
+discord-mirror::part(image) {
+  width: 800px;
+  height: auto;
+}
+```
+
+## HighlightJS
+
+We use [Highlight.js](https://highlightjs.org/static/demo/) to add syntax highlighting to messages. By default we apply the `atom-one-dark` theme. You can override this with the `highlight-theme` property.
+
+```html
+<discord-mirror url="<your db url>" highlight-theme="ascetic"></discord-mirror>
+```
+
 # Contributing
 
 The CascadiaJS [code of conduct](https://2021.cascadiajs.com/code-of-conduct) applies to all particpants contributing to this repository.
 
-We use [semantic-release](https://semantic-release.gitbook.io/semantic-release/) to deploy our updates. Below are example of commit messages and the release types they will create.
+## Commits
+
+Please keep commit messages formatted in the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) standard. We use commit messages to determine the release and generate changelog via [semantic release](https://semantic-release.gitbook.io/semantic-release/). For ease of use this repo is setup to work with [https://commitizen.github.io/cz-cli/](commitizen). Run `npx cz` or `npm run commit` to invoke commitizen and have it walk you though building the commit message. Below are example of commit messages and the release types they will create.
 
 | Commit message                                                                                                                                                                                   | Release type               |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
@@ -173,7 +222,3 @@ npm test
 ```
 
 Need help? Check out Stencil docs [here](https://stenciljs.com/docs/my-first-component).
-
-## Commits
-
-Please keep commit messages formatted in the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) standard. We use commit messages to determine the release and generate changelog via [semantic release](https://semantic-release.gitbook.io/semantic-release/). For ease of use this repo is setup to work with [https://commitizen.github.io/cz-cli/](commitizen). Run `npx cz` or `npm run commit` to invoke commitizen and have it walk you though building the commit message.

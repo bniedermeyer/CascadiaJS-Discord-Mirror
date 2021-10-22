@@ -8,6 +8,10 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   if ('target' in node) {
     node.setAttribute('target', '_blank');
   }
+  // assign image part for all images
+  if (node.nodeName === 'IMG') {
+    node.setAttribute('part', 'image');
+  }
   // set non-HTML/MathML links to xlink:show=new
   if (!node.hasAttribute('target') && (node.hasAttribute('xlink:href') || node.hasAttribute('href'))) {
     node.setAttribute('xlink:show', 'new');

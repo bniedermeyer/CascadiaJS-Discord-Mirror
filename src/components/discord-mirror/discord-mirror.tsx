@@ -14,6 +14,10 @@ export class DiscordMirror {
   @Prop() url: string;
   /** If read protection is enabled in your database, the Firebase project's Web API Key */
   @Prop() token: string;
+  /** If false, will not apply any text styling. See https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom for help styling from consuming applications */
+  @Prop() useStyles: boolean = true;
+  /** The HighlightJS theme to apply to markdown. Must have `useStyles` enabled */
+  @Prop() highlightTheme: string = 'atom-one-dark';
   /** Whether or not auto scroll is active for the user */
   @State() scrollToLatest = true;
   /** The current messages rendered */
@@ -98,16 +102,20 @@ export class DiscordMirror {
   render() {
     return (
       <Host>
-        <ul ref={el => (this.startOfChat = el as HTMLElement)}>
+        <ul ref={el => (this.startOfChat = el as HTMLElement)} class={`message-container ${this.useStyles ? 'with-styles' : ''}`}>
           {this.messages.map(message => (
             <li key={message.created}>
               <div class="message">
-                <div class="username">{message.username}: </div> <MessageContent message={message} />
+                <div class="username" part="username">
+                  {message.username}:{' '}
+                </div>{' '}
+                <MessageContent message={message} />
               </div>
             </li>
           ))}
           <li id="end" aria-hidden="true" ref={el => (this.endOfChat = el as HTMLElement)}></li>
         </ul>
+        {this.useStyles && <link rel="stylesheet" href={`https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/${this.highlightTheme}.min.css`} />}
       </Host>
     );
   }

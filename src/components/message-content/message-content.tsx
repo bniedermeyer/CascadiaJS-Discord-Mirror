@@ -7,7 +7,7 @@ export const MessageContent: FunctionalComponent<{ message: Message }> = ({ mess
     <div class="chat-gif" style={{ marginTop: '3px', marginBottom: '3px' }}>
       <picture>
         <source srcSet={message.gif.gifUrl} media="(prefers-reduced-motion: no-preference)" style={{ width: '300px', height: 'auto' }}></source>
-        <img srcSet={message.gif.preview} alt={message.gif.alt} style={{ width: '300px', height: 'auto' }} />
+        <img srcSet={message.gif.preview} alt={message.gif.alt} style={{ width: '300px', height: 'auto' }} part="image" />
       </picture>
       {/* We need to display a `via tenor` message per terms of the Tenor API */}
       {message.gif.gifUrl.match('tenor') && (
@@ -17,6 +17,6 @@ export const MessageContent: FunctionalComponent<{ message: Message }> = ({ mess
       )}
     </div>
   ) : (
-    <div class="message-text" innerHTML={parseCode(message.text)}></div>
+    <div class="message-text" part="message-text" innerHTML={parseCode(message.text)}></div>
   );
 };
