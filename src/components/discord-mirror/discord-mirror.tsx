@@ -105,10 +105,10 @@ export class DiscordMirror {
         <ul ref={el => (this.startOfChat = el as HTMLElement)} class={`message-container ${this.useStyles ? 'with-styles' : ''}`}>
           {this.messages.map(message => (
             <li key={message.created}>
-              <div class="message">
+              <div class="message" part="message">
                 <div class="username" part="username">
-                  {message.username}:{' '}
-                </div>{' '}
+                  {message.username}:
+                </div>
                 <MessageContent message={message} />
               </div>
             </li>
