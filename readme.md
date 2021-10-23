@@ -138,7 +138,9 @@ If you disable styles you will have to style the messages yourself. Messages use
 
 - `.message`: this is the container for each message
 - `.username`: this is the username element
+- `.message-body`: the body of a message, regardless of the content
 - `.message-text`: this contains the content of the message and can be variable based on whether the message is just text or markdown.
+- `.message-gif`: this is the gif content of the message
 
 ## Shadow DOM
 
@@ -147,19 +149,39 @@ Additionally, this component uses the Shadow DOM to help encapsulate styling of 
 - [Stencil Documentation](https://stenciljs.com/docs/styling#things-to-remember-with-shadow-dom)
 - https://developers.google.com/web/fundamentals/web-components/shadowdom#stylefromoutside
 
-We also expose [css shadow parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/) for `username`, `message-text`, and `image`.
+We also expose [css shadow parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/) for the above classes and additionally an `image` part that lets you style all images and gifs.
 
 ```css
 /* in your consuming app's css */
+discord-mirror::part(message) {
+  border: 1px solid red;
+}
+
 discord-mirror::part(username) {
-  font-weight: lighter;
+  border: 1px solid gray;
+  padding: 2px;
 }
+
+discord-mirror::part(message-body) {
+  border: 2px solid blue;
+}
+
 discord-mirror::part(message-text) {
-  font-weight: bold;
+  color: red;
 }
+
 discord-mirror::part(image) {
-  width: 800px;
+  border: 2px solid green;
+  width: 400px;
   height: auto;
+  padding: 2px;
+}
+
+discord-mirror::part(message-gif) {
+  border: 2px solid yellow;
+  width: 200px;
+  height: auto;
+  padding: 2px;
 }
 ```
 
