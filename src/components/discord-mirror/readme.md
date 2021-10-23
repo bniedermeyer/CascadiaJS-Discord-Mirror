@@ -17,6 +17,7 @@
 
 | Part         | Description |
 | ------------ | ----------- |
+| `"message"`  |             |
 | `"username"` |             |
 
 

@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.4.0...v1.5.0) (2021-10-23)
+
+
+### Features
+
+* **styling:** add class for message body and shadow part selectors for all parts of a message ([354988e](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/354988e0e74fbfe078f9075c040f7a2539b75a26))
+
 # [1.4.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.3.0...v1.4.0) (2021-10-22)
 
 

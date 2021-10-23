@@ -1,6 +1,6 @@
 {
   "name": "@cascadiajs/discord-mirror",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A web component for displaying current activity within a Discord Channel",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
