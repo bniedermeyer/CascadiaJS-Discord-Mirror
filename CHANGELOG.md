@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.0...v1.5.1) (2021-10-24)
+
+
+### Bug Fixes
+
+* **scrolling:** don't rely on `scrollIntoView` for autoscroll ([c3ead8f](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/c3ead8f73cf3e773c7e4f202d5827a1aa88422b1))
+
 # [1.5.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.4.0...v1.5.0) (2021-10-23)
 
 
