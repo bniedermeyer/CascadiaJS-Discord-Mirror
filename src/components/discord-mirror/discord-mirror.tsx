@@ -48,7 +48,9 @@ export class DiscordMirror {
     this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(300));
     this.unsubscribeFromDb = onValue(this.messageQuery, (snapshot: DataSnapshot) => {
       if (snapshot.val() !== null) {
-        const updatedMessages = (Object.values(snapshot.val()) as Message[]).filter(message => message.visible);
+        const updatedMessages = (Object.values(snapshot.val()) as Message[])
+          .filter(message => message.visible)
+          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
         // only scroll to the latest if the user is not scrolling
         if (this.scrollToLatest) {
@@ -62,14 +64,10 @@ export class DiscordMirror {
   }
 
   componentDidLoad() {
-    // initialize the IntersectionObserver after the first render
-    this.initScrollObserver();
-  }
-
-  componentDidRender() {
-    if (this.scrollToLatest) {
-      this.endOfChat.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-    }
+    setTimeout(() => {
+      // wait 1 sec before initializing scroll observer to ensure content is loaded and scrolled to
+      this.initScrollObserver();
+    }, 1000);
   }
 
   disconnectedCallback() {
@@ -103,6 +101,8 @@ export class DiscordMirror {
     return (
       <Host>
         <ul ref={el => (this.startOfChat = el as HTMLElement)} class={`message-container ${this.useStyles ? 'with-styles' : ''}`}>
+          {/* we use flexbox column-reverse so this needs to come first to ensure it's at the end of the chat window */}
+          <li id="end" aria-hidden="true" ref={el => (this.endOfChat = el as HTMLElement)}></li>
           {this.messages.map(message => (
             <li key={message.created}>
               <div class="message" part="message">
@@ -113,7 +113,6 @@ export class DiscordMirror {
               </div>
             </li>
           ))}
-          <li id="end" aria-hidden="true" ref={el => (this.endOfChat = el as HTMLElement)}></li>
         </ul>
         {this.useStyles && <link rel="stylesheet" href={`https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/${this.highlightTheme}.min.css`} />}
       </Host>
