@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.1...v1.5.2) (2021-10-30)
+
+
+### Bug Fixes
+
+* prevent header styles ([2effdae](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/2effdaea310b4a82ed1eae83ff965f108959ed10))
+
 ## [1.5.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.0...v1.5.1) (2021-10-24)
 
 
