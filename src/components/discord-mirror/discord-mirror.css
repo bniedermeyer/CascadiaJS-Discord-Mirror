@@ -12,6 +12,14 @@ ul.message-container {
   flex-direction: column-reverse;
 }
 
+.message-text h1,
+.message-text h2,
+.message-text h3,
+.message-text h4 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
 .username {
   margin-right: 15px;
 }
