@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.4...v1.6.5) (2021-10-31)
+
+
+### Bug Fixes
+
+* disable fb logging ([0e04309](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/0e043095793db5af5bbd8ed83dd073efefdc617d))
+
 ## [1.6.4](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.3...v1.6.4) (2021-10-31)
 
 
