@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 import { FirebaseService } from '../../utils/firebase.service';
-import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild } from 'firebase/database';
+import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild, enableLogging } from 'firebase/database';
 import { Message } from '../models';
 import { MessageContent } from '../message-content/message-content';
 
@@ -39,9 +39,10 @@ export class DiscordMirror {
   /** An IntersectionObserver to track whether the user has scrolled further up in chat history */
   observer: IntersectionObserver;
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.fbService = new FirebaseService(this.url, this.token, Boolean(this.token));
     this.database = this.fbService.getDatabase();
+    enableLogging(true);
     const dbRef = ref(this.database, 'messages');
     // build the query that we want to run against the database and subscribe to updates
     // TODO: look into using virtual scrolling so we don't have to limit messages
@@ -61,6 +62,9 @@ export class DiscordMirror {
         }
       }
     });
+  }
+
+  componentDidLoad() {
     setTimeout(() => {
       // wait 1 sec before initializing scroll observer to ensure content is loaded and scrolled to
       this.initScrollObserver();
