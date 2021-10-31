@@ -39,7 +39,7 @@ export class DiscordMirror {
   /** An IntersectionObserver to track whether the user has scrolled further up in chat history */
   observer: IntersectionObserver;
 
-  componentWillLoad() {
+  componentDidLoad() {
     this.fbService = new FirebaseService(this.url, this.token, Boolean(this.token));
     this.database = this.fbService.getDatabase();
     enableLogging(true);
@@ -62,9 +62,7 @@ export class DiscordMirror {
         }
       }
     });
-  }
 
-  componentDidLoad() {
     setTimeout(() => {
       // wait 1 sec before initializing scroll observer to ensure content is loaded and scrolled to
       this.initScrollObserver();
