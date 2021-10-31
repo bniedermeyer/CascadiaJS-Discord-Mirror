@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.2...v1.6.3) (2021-10-31)
+
+
+### Bug Fixes
+
+* move db init to after component render ([b0cf3f6](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/b0cf3f68c514a061a52a9b8ba4c502c2ef7314cd))
+
 ## [1.6.2](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.1...v1.6.2) (2021-10-31)
 
 
