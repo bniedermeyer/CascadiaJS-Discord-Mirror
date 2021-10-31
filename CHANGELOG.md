@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.3...v1.6.0) (2021-10-31)
+
+
+### Features
+
+* auto-unroll image links ([b3fed5f](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/b3fed5feb6e97c114b402fba8cfd1b9ac1f06161))
+
 ## [1.5.3](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.2...v1.5.3) (2021-10-31)
 
 
