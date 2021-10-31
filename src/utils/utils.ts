@@ -18,6 +18,12 @@ DOMPurify.addHook('afterSanitizeAttributes', function (node) {
   }
 });
 
+const renderer = {
+  heading(text: string) {
+    return text;
+  },
+};
+
 marked.setOptions({
   highlight: function (code, lang) {
     const hljs = hjs;
@@ -26,6 +32,8 @@ marked.setOptions({
   },
   langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
 });
+
+marked.use({ renderer });
 
 export function parseCode(messageString: string) {
   const html = marked(messageString);
