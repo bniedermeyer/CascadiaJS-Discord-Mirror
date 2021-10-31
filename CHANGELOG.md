@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.3...v1.6.4) (2021-10-31)
+
+
+### Bug Fixes
+
+* use absolute path for db ([ca240ec](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/ca240ec2beafa4764b3bb1c232f4451679088a32))
+
 ## [1.6.3](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.2...v1.6.3) (2021-10-31)
 
 
