@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.0...v1.6.1) (2021-10-31)
+
+
+### Bug Fixes
+
+* wait for component to load before connecting to firebase ([bfac939](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/bfac93935fbef0c975164b11cb34645ac881f664))
+
 # [1.6.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.5.3...v1.6.0) (2021-10-31)
 
 
