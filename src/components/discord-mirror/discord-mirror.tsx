@@ -43,7 +43,7 @@ export class DiscordMirror {
     this.fbService = new FirebaseService(this.url, this.token, Boolean(this.token));
     this.database = this.fbService.getDatabase();
     enableLogging(true);
-    const dbRef = ref(this.database, 'messages');
+    const dbRef = ref(this.database, '/messages');
     // build the query that we want to run against the database and subscribe to updates
     // TODO: look into using virtual scrolling so we don't have to limit messages
     this.messageQuery = query(dbRef, orderByChild('created'), limitToLast(300));
