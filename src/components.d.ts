@@ -24,6 +24,7 @@ export namespace Components {
      */
     useStyles: boolean;
   }
+  interface LoadingIndicator {}
 }
 declare global {
   interface HTMLDiscordMirrorElement extends Components.DiscordMirror, HTMLStencilElement {}
@@ -31,8 +32,14 @@ declare global {
     prototype: HTMLDiscordMirrorElement;
     new (): HTMLDiscordMirrorElement;
   };
+  interface HTMLLoadingIndicatorElement extends Components.LoadingIndicator, HTMLStencilElement {}
+  var HTMLLoadingIndicatorElement: {
+    prototype: HTMLLoadingIndicatorElement;
+    new (): HTMLLoadingIndicatorElement;
+  };
   interface HTMLElementTagNameMap {
     'discord-mirror': HTMLDiscordMirrorElement;
+    'loading-indicator': HTMLLoadingIndicatorElement;
   }
 }
 declare namespace LocalJSX {
@@ -54,8 +61,10 @@ declare namespace LocalJSX {
      */
     useStyles?: boolean;
   }
+  interface LoadingIndicator {}
   interface IntrinsicElements {
     'discord-mirror': DiscordMirror;
+    'loading-indicator': LoadingIndicator;
   }
 }
 export { LocalJSX as JSX };
@@ -63,6 +72,7 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'discord-mirror': LocalJSX.DiscordMirror & JSXBase.HTMLAttributes<HTMLDiscordMirrorElement>;
+      'loading-indicator': LocalJSX.LoadingIndicator & JSXBase.HTMLAttributes<HTMLLoadingIndicatorElement>;
     }
   }
 }
