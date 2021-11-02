@@ -101,16 +101,9 @@ export class DiscordMirror {
   }
 
   render() {
-    if (this.loading) {
-      return (
-        <Host>
-          <loading-indicator />
-        </Host>
-      );
-    }
-
     return (
       <Host>
+        {this.loading && <loading-indicator />}
         <ul ref={el => (this.startOfChat = el as HTMLElement)} class={`message-container ${this.useStyles ? 'with-styles' : ''}`}>
           {/* we use flexbox column-reverse so this needs to come first to ensure it's at the end of the chat window */}
           <li id="end" aria-hidden="true" ref={el => (this.endOfChat = el as HTMLElement)}></li>
