@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.7.0...v1.7.1) (2021-11-02)
+
+
+### Bug Fixes
+
+* ensure intersection observer loads ([f29b314](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/f29b3147b50e769cd30bb2032c5caff4a6a1031e))
+
 # [1.7.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.5...v1.7.0) (2021-11-02)
 
 
