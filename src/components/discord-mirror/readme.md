@@ -21,6 +21,19 @@
 | `"username"` |             |
 
 
+## Dependencies
+
+### Depends on
+
+- [loading-indicator](../loading-indicator)
+
+### Graph
+```mermaid
+graph TD;
+  discord-mirror --> loading-indicator
+  style discord-mirror fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

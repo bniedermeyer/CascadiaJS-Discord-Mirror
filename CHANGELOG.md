@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.5...v1.7.0) (2021-11-02)
+
+
+### Features
+
+* add loading indicator ([940548b](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/940548b224d56ef64620413ccf93a35c1e4f4dfb))
+
 ## [1.6.5](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.6.4...v1.6.5) (2021-10-31)
 
 
