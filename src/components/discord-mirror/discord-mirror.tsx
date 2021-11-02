@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 import { FirebaseService } from '../../utils/firebase.service';
-import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild, enableLogging } from 'firebase/database';
+import { Database, Unsubscribe, DataSnapshot, Query, query, ref, onValue, limitToLast, orderByChild } from 'firebase/database';
 import { Message } from '../models';
 import { MessageContent } from '../message-content/message-content';
 
@@ -22,6 +22,7 @@ export class DiscordMirror {
   @State() scrollToLatest = true;
   /** The current messages rendered */
   @State() messages: Message[] = [];
+  @State() loading: boolean = true;
   /** Temporary story of messages that are received while the user is scrolling */
   tempMessages: Message[] = [];
   /** The start of the chat message list */
@@ -53,6 +54,10 @@ export class DiscordMirror {
           .filter(message => message.visible)
           .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
+        if (this.loading && updatedMessages) {
+          this.loading = false;
+        }
+
         // only scroll to the latest if the user is not scrolling
         if (this.scrollToLatest) {
           this.messages = updatedMessages;
@@ -62,7 +67,6 @@ export class DiscordMirror {
         }
       }
     });
-
     setTimeout(() => {
       // wait 1 sec before initializing scroll observer to ensure content is loaded and scrolled to
       this.initScrollObserver();
@@ -97,6 +101,14 @@ export class DiscordMirror {
   }
 
   render() {
+    if (this.loading) {
+      return (
+        <Host>
+          <loading-indicator />
+        </Host>
+      );
+    }
+
     return (
       <Host>
         <ul ref={el => (this.startOfChat = el as HTMLElement)} class={`message-container ${this.useStyles ? 'with-styles' : ''}`}>
