@@ -23,7 +23,7 @@ const renderer = {
     return text;
   },
   html(text: string) {
-    return text.replace(/<\w+\/?.*>/, '');
+    return text.replace(/<[^>]+>/g, '');
   },
 };
 
