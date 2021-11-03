@@ -22,6 +22,9 @@ const renderer = {
   heading(text: string) {
     return text;
   },
+  html(text: string) {
+    return text.replace(/<\w+\/?.*>/, '');
+  },
 };
 
 marked.setOptions({
