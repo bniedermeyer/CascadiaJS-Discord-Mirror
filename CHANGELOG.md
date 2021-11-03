@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.7.2...v1.7.3) (2021-11-03)
+
+
+### Bug Fixes
+
+* better html match pattern ([db3b208](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/db3b208459ef199c1cecdcbd9117514ba546d889))
+
 ## [1.7.2](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.7.1...v1.7.2) (2021-11-03)
 
 
