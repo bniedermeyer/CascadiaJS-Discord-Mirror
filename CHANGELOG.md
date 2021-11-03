@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.7.1...v1.7.2) (2021-11-03)
+
+
+### Bug Fixes
+
+* no html parsing for you ([bd26b83](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/commit/bd26b834e0e4d07a1c0358ae93f826499af2cd09))
+
 ## [1.7.1](https://github.com/bniedermeyer/CascadiaJS-Discord-Mirror/compare/v1.7.0...v1.7.1) (2021-11-02)
 
 
